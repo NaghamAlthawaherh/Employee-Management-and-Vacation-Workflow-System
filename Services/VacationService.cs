@@ -70,7 +70,7 @@ public class VacationService
         public async Task<RequestState?> GetRequestStateByIdAsync(int requestStateId)
 {
     return await _context.RequestStates
-        .AsNoTracking()  // ✅ Prevents tracking conflicts
+        .AsNoTracking()  // Prevents tracking conflicts
         .FirstOrDefaultAsync(rs => rs.StateId == requestStateId);
 }
 
